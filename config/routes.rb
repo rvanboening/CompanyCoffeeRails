@@ -1,11 +1,5 @@
 CompanyCoffeeRails::Application.routes.draw do
-  get "drinks/index"
-
-  get "drinks/show"
-
-  get "drinks/new"
-
-  get "drinks/edit"
+  resources :drinks, :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,40 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+<div class="container">
+    <header class="main-header">
+        <h1>Company Coffee</h1>
+        <p>We are happy to keep you caffeinated!</p>
+    </header>
+    <hr>
+    
+    <% @user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+    
+    <div class="main-content">
+    <%= form_for: users, url: {:action => 'create'} do |f|%>
+        <%=f.label "Name" %>
+        <%=f.text_field("user_name")%><br>
+        
+        <%=f.label "Office Number" %>
+        <%=f.text_field("office_num")%><br>
+        
+        <%=f.submit%>
+        
+        <% end %>
+        
+    
+        <form action="/menu" method="post">
+            <label for="name">Name:</lable> <br>
+            <input type="text" name="user_name" />
+            <br>
+            <br>
+            <label for="office_number">Office Number:</label> <br>
+            <input type="number" name="office_num" />
+            <br>
+            <br>
+            <input class="button" type = "Submit" value="Submit" /> 
+        </form>
+    </div>
+</div>
